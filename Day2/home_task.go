@@ -6,10 +6,8 @@ import (
   "time"
   "math/rand"
 )
-
 var timePark = make([]int64, 0)
 var park = make([]string, 0)
-
 
 func main()  {
   var key string
