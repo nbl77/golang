@@ -8,10 +8,6 @@ import (
   "io/ioutil"
     "log"
 )
-type Profile struct {
-  Name    string
-  Hobbies []string
-}
 type Parkir struct {
   id int64 `json:"id"`
   tipe string `json:"tipe"`
