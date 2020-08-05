@@ -6,10 +6,14 @@ import (
   "time"
   "math/rand"
 )
+
 var timePark = make([]int64, 0)
 var park = make([]string, 0)
+
+
 func main()  {
   var key string
+
   for key != "4"{
     makeMenu(
       "Parkir Masuk",
@@ -49,14 +53,7 @@ func makeMenu(menu ...string)  {
   }
   fmt.Println("Silahkan Pilih :")
 }
-func RemoveIndexInt64(arr *[]int64, index int) {
-    newArr := *arr
-    *arr = append(newArr[:index], newArr[index+1:]...)
-}
-func RemoveIndexStr(arr *[]string, index int) {
-  newArr := *arr
-  *arr = append(newArr[:index], newArr[index+1:]...)
-}
+
 func servParkIn() string {
   lenBef := len(park)
   timePark = append(timePark, time.Now().Unix())
@@ -66,6 +63,7 @@ func servParkIn() string {
 func servParkOut(tipe, plat, id_parkir string) string {
   parkir := false
   var timeParkir int64
+
   for key, val := range park{
     if id_parkir == val{
       parkir = true
@@ -101,4 +99,13 @@ func servParkOut(tipe, plat, id_parkir string) string {
     return "Tipe yang anda masukan tidak tersedia"
   }
   return "Waktu parkir anda " + strconv.Itoa(int(currentTime)) + " detik, Jumlah uang yang harus anda bayar adalah " + strconv.Itoa(total)
+}
+
+func RemoveIndexInt64(arr *[]int64, index int) {
+    newArr := *arr
+    *arr = append(newArr[:index], newArr[index+1:]...)
+}
+func RemoveIndexStr(arr *[]string, index int) {
+  newArr := *arr
+  *arr = append(newArr[:index], newArr[index+1:]...)
 }
