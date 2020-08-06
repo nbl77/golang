@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package model;
+
+enum UserGender{
+  UNDEFINED = 0;
+  MALE = 1;
+  FEMALE = 2;
+}
+
+message User{
+  string id = 1;
+  string nama = 2;
+  string alamat = 3;
+}
