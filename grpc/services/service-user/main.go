@@ -24,7 +24,7 @@ type UsersServer struct {}
 func (UsersServer) Register(ctx context.Context, param *model.User) (*empty.Empty, error) {
     localStorage.List = append(localStorage.List, param)
 
-  log.Println("Registering user", param.String())
+    log.Println("Registering user", param.String())
 
     return new(empty.Empty), nil
 }
@@ -38,7 +38,7 @@ func main() {
     model.RegisterUsersServer(srv, userSrv)
 
     log.Println("Starting RPC server at", config.SERVICE_USER_PORT)
-    
+
     l, err := net.Listen("tcp", config.SERVICE_USER_PORT)
     if err != nil {
       log.Fatalf("could not listen to %s: %v", config.SERVICE_USER_PORT, err)

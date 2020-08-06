@@ -11,6 +11,7 @@ import (
     "github.com/golang/protobuf/ptypes/empty"
     "google.golang.org/grpc"
 )
+
 func serviceGarage() model.GaragesClient {
    port := config.SERVICE_GARAGE_PORT
    conn, err := grpc.Dial(port, grpc.WithInsecure())
@@ -71,9 +72,6 @@ func showUser(serviceUser model.UsersClient)  {
   res1String, _ := json.Marshal(res1.List)
   log.Println(string(res1String))
 }
-
-
-
 
 func addGarage(garageService model.GaragesClient, user model.User, garage model.Garage)  {
   fmt.Println("\n", "===========> garage test A")
